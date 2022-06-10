@@ -5,9 +5,13 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.List;
+import java.util.logging.Handler;
 
 public class EchoServer {
+    private List<Handler> handlers;
     public static void main(String[] args) {
+
         Socket socket= null;
         try (ServerSocket serverSocket= new ServerSocket(8189)) {
             System.out.println("Server ON. Wait connection ...");
